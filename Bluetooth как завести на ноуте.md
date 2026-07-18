@@ -1,8 +1,12 @@
 1) Для начала ставим 
 ~~~
-	sudo pacman -S bluez bluez-utils bluemam
+	sudo pacman -S bluez bluez-utils
 ~~~
 
+bluez - стек протоколов Bluetooth 
+bluez-utils - пакет, предоставляющий bluetoothctl
+
+После установки проверяем `lsmod` модуль ядра btusb. Это не обязательно, но иногда стоит. Еслт его нет то загружаем
 
 ---
 ### Ссылки
