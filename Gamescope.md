@@ -8,6 +8,8 @@ sudo pacman -S gamescope
 ```
 
 Через Flatpak
+```
+```
 # Опции
 
 ## Использовние
