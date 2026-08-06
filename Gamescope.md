@@ -8,8 +8,6 @@ sudo pacman -S gamescope
 ```
 
 Через Flatpak
-```
-```
 # Опции
 
 ## Использовние
@@ -28,10 +26,10 @@ sudo pacman -S gamescope
 |         `-F`, `--filter`         |                                                     задает фильтрацию мастабирования: <br>`linear`: линейная фильтрация, <br>`nearest`: фильтрация по методу "ближенего соседа", <br>`fsr`: AMD FidelityFX Super Resolution 1.0, <br>`nis`: NVIDIA Image Scaling v.1.0.3, <br>`pixel`: пиксельная фильтрация                                                      |
 | `--sharpness`, `--fsr-sharpness` |                                                                                                                                    задает резкость масштабирования:<br>0 - максимальная резкость<br>20 - минимальная резкость                                                                                                                                     |
 |        `--expose-wayland`        |                                                                                                       поддержка Wayland-клиентов с использовнием xdg-shell.<br>Позволяет gamescope запускать нативные wayland-приложения и корректно отображаться их окна.                                                                                                        |
-|   `-s`, `--mouse-sensitivity`    |                                                                                                                                                                         задает множитель                                                                                                                                                                          |
+|   `-s`, `--mouse-sensitivity`    |                                                                                                                                                    задает десятичным значением множитель чувствительности мыши                                                                                                                                                    |
+|           `--backend`            |                                                                                                                                                               позволяет выборать движок отрисовки:                                                                                                                                                                |
 |                                  |                                                                                                                                                                                                                                                                                                                                                                   |
 
-  -s, --mouse-sensitivity        multiply mouse movement by given decimal number
   --backend                      select rendering backend
                                      auto => autodetect (default)
                                      drm => use DRM backend (standalone display session)
