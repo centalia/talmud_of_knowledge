@@ -29,8 +29,8 @@ sudo pacman -S gamescope
 |   `-s`, `--mouse-sensitivity`    |                                                                                                                                                    задает десятичным значением множитель чувствительности мыши                                                                                                                                                    |
 |           `--backend`            |                                                                                                                                                               позволяет выборать движок отрисовки:                                                                                                                                                                |
 |                                  |                                                                                                                                                                                                                                                                                                                                                                   |
-
-  --backend                      select rendering backend
+>[!quote] - доперевести 
+  > --backend                      select rendering backend
                                      auto => autodetect (default)
                                      drm => use DRM backend (standalone display session)
                                      sdl => use SDL backend
@@ -61,8 +61,8 @@ sudo pacman -S gamescope
   --framerate-limit              Set a simple framerate limit. Used as a divisor of the refresh rate, rounds down eg 60 / 59 -> 60fps, 60 / 25 -> 30fps. Default: 0, disabled.
   --mangoapp                     Launch with the mangoapp (mangohud) performance overlay enabled. You should use this instead of using mangohud on the game or gamescope.
   --adaptive-sync                Enable adaptive sync if available (variable rate refresh)
-
-Nested mode options:
+>
+> Nested mode options:
   -o, --nested-unfocused-refresh game refresh rate when unfocused
   -b, --borderless               make the window borderless
   -f, --fullscreen               make the window fullscreen
@@ -74,7 +74,7 @@ Embedded mode options:
   --default-touch-mode           0: hover, 1: left, 2: right, 3: middle, 4: passthrough
   --generate-drm-mode            DRM mode generation algorithm (cvt, fixed)
   --immediate-flips              Enable immediate flips, may result in tearing
-
+>
 VR mode options:
   --vr-overlay-key                         Sets the SteamVR overlay key to this string
   --vr-app-overlay-key						Sets the SteamVR overlay key to use for child apps
@@ -91,7 +91,7 @@ VR mode options:
   --vr-overlay-physical-curvature          Sets the curvature of our VR overlay
   --vr-overlay-physical-pre-curve-pitch    Sets the pre-curve pitch of our VR overlay
   --vr-scrolls-speed                       Mouse scrolling speed of trackpad scroll in VR. Default: 8.0
-
+>
 Debug options:
   --disable-layers               disable libliftoff (hardware planes)
   --debug-layers                 debug libliftoff
@@ -109,14 +109,14 @@ Debug options:
 Reshade shader options:
   --reshade-effect               sets the name of a reshade shader to use in either /usr/share/gamescope/reshade/Shaders or ~/.local/share/gamescope/reshade/Shaders
   --reshade-technique-idx        sets technique idx to use from the reshade effect
-
+>
 Steam Deck options:
   --mura-map                     Set the mura compensation map to use for the display. Takes in a path to the mura map.
-
+>
 Platform options:
   --allow-deferred-backend       Allows initting the backend in a deferred way, if it doesn't work immediately. (Note: This has some very minor correctness compromises that you should consider wrt. your platform with modifiers, etc).
   --keep-alive                   Keep Gamescope alive even when the primary process has died.
-
+>
 Keyboard shortcuts:
   Super + F                      toggle fullscreen
   Super + N                      toggle nearest neighbour filtering
