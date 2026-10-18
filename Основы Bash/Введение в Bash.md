@@ -134,3 +134,5 @@ if ! cd "$LOG_DIR"; then
 fi
 # ... (остальная логика)
 ```
+
+В дополнение про шебанг для лучшей совместимости многие советуют использовать /usr/bin/env вместо непосредствено /bin/bash. Хотя, учитывая комментарии на [StackOverflow](https://stackoverflow.com/questions/21612980/why-is-usr-bin-env-bash-superior-to-bin-bash) , даже это может иногда не сработать.
