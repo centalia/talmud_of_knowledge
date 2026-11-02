@@ -3,7 +3,7 @@ tags:
   - cup
   - architecture
   - bash
-status: idea
+status: complete
 created: 2026-10-26
 completed: 2026-10-02
 ---
