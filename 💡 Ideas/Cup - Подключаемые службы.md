@@ -1,9 +1,13 @@
 ---
-tags: [cup, architecture, bash]
+tags:
+  - cup
+  - architecture
+  - bash
 status: idea
 created: 2026-10-26
+completed: 2026-10-02
 ---
-> [!abstract] Статус: В планах
+> [!abstract] Статус: Реализовано
 
 ## 💡 Суть
 Научить `cup` управлять не только системными пакетами, но и сторонним софтом (Яндекс.Музыка, AppImage, Flatpak). Сделать из `cup` «Единое окно управления» (Single Pane of Glass) для всего софта на компьютере.
