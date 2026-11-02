@@ -3,7 +3,7 @@
 # Установка
 
 ```
-sudo pacman -S debtap
+sudo yay -S debtap
 ```
 
 # Использование
