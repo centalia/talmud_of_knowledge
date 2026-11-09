@@ -1,17 +1,30 @@
+**Переменные**
+``` bash
+DAVINCI_20_URL="ссыль на скачивание"
+DAVINCI_20_VERSIONS="20.3.3"
+
+DAVINCI_20_MIN_SIZE=8992784008
+SIZE=stat -c 
+```
+
 **1. Подготовка**
 
-- Создай временную папку (`mktemp -d`), сохрани путь в `local temp_dir`.
-- Выведи сообщение: `==> Installing DaVinci Resolve Studio $DAVINCI_VERSION`.
+- Создать временную папку (`mktemp -d`), сохрани путь в `local temp_dir`.
+- Вывести сообщение: `==> Installing DaVinci Resolve Studio`.
 
 **2. Скачивание**
 
-- Вызов `download_file "$DAVINCI_URL" "$temp_dir/davinci.zip"`.
-- Если функция вернула ошибку — прервись (`return 1`).
+- Вызов `download_file "$DAVINCI_20_URL=" "$temp_dir/davinci.zip"`.
+- Если функция вернула ошибку — `return 1`.
 
-**3. Проверка размера (защита от протухшей ссылки)**
+**3. Проверка размера**
+- Проверить наличие файла if [ -f "путь к файлу" ]
 
-- Получи размер скачанного файла (через `stat` или `wc -c`).
-- Если размер **меньше** `MIN_SIZE` — напиши: `==> Error: Downloaded file is too small. Link may be outdated.` — и `return 1`.
+- Если истина, то получить размер скачанного файла через `stat`.
+- И сравнить `MIN_SIZE` с размером файла 
+	- Если условие ложно вывести: `==> Error: Downloaded file is too small. Link may be outdated.` и `return 1`.
+	- 
+- 
 
 **4. Распаковка**
 
