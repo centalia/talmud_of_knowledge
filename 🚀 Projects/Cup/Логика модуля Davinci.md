@@ -35,17 +35,11 @@ SIZE=stat -c "%s" "фаил"
 - Если файла`.run` нет — ошибка «installer not found» и `exit 1`.
 
 **6. Установка**
-
-- Запускаем установщик от `sudo` с флагом тихой установки (`-i`).
-- Возможно, понадобится переменная окружения `SKIP_PACKAGE_CHECK=1` перед командой.
-- Если установка упала — прервись.
-
 **7. Фикс библиотек (обязательный шаг!)**
 
-- Перейди в `/opt/resolve/libs`.
-- Создай папку `_disabled` (если её нет).
-- Перемести туда конфликтующие библиотеки: `libglib*`, `libgio*`, `libgmodule*`, `libgobject*`.
-- Это делается **после** установки, чтобы DaVinci использовал свои версии, а не системные.
+- Переходим в `/opt/resolve/libs`.
+- Создай папку `disabled_libs` (если её нет).
+- Перемещаем туда конфликтующие библиотеки: `libglib*`, `libgio*`, `libgmodule*`, `libgobject*`.
 
 **8. Запись в БД**
 
@@ -55,4 +49,13 @@ SIZE=stat -c "%s" "фаил"
 **9 Уборка**
 
 - После выхода из подоболочки удали `$temp_dir` (`rm -rf`).
-- `return 0`.
+- `return 0`
+
+
+cd /opt/resolve
+
+sudo perl -pi -e 's/\xBE\x05\x00\x00\x00\xE8\x0B\x8A\x01\x00\x84\xC0\x0F\x84\xCA\x00\x00\x00/\xBE\x05\x00\x00\x00\xE8\x0B\x8A\x01\x00\x84\xC0\x90\x90\x90\x90\x90\x90/' bin/resolve
+
+sudo perl -pi -e 's/\xB3\x01\xE8\x64\x92\x98\x03\x84\xC0\x0F\x85\xC9\x00\x00\x00/\xB3\x01\xE8\x64\x92\x98\x03\x84\xC0\x90\xE9\xC9\x00\x00\x00/' bin/resolve
+
+sudo perl -0777 -pi -e 's/\x74(.\xBF\x16\x00\x00\x00\xBE.\x01\x00\x00(?:\x89\xC2\x89\xC3)?\xE8)/\x75$1/g' bin/resolve
