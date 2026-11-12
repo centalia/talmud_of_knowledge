@@ -9,13 +9,13 @@ SIZE=stat -c "%s" "фаил"
 
 **1. Подготовка**
 
-- Создать временную папку (`mktemp -d`), сохрани путь в `local temp_dir`.
+- Создать временную папку (`mktemp -d`), сохранить путь в `local temp_dir`.
+- Создать .cache
 - Вывести сообщение: `==> Installing DaVinci Resolve Studio`.
 
 **2. Скачивание**
 
-- Вызов `download_file "$DAVINCI_20_URL=" "$temp_dir/davinci.zip"`.
-- Если функция вернула ошибку — `return 1`.
+- `download_file "$DAVINCI_URL" "$temp_dir/davinci.zip"`.
 
 **3. Проверка размера**
 - Проверить наличие файла if [ -f "путь к файлу" ]
@@ -35,21 +35,24 @@ SIZE=stat -c "%s" "фаил"
 - Если файла`.run` нет — ошибка «installer not found» и `exit 1`.
 
 **6. Установка**
-**7. Фикс библиотек (обязательный шаг!)**
+**7. Запись в БД**
+
+- `write_package "DaVinci Resolve Studio" "davinci" "$DAVINCI_VERSION" "" ""`.
+
+**9 Уборка**
+
+- Удаляем (`rm -rf`) `$temp_dir`  .
+- `return 0`
+
+**8. Фикс библиотек **
 
 - Переходим в `/opt/resolve/libs`.
 - Создай папку `disabled_libs` (если её нет).
 - Перемещаем туда конфликтующие библиотеки: `libglib*`, `libgio*`, `libgmodule*`, `libgobject*`.
 
-**8. Запись в БД**
 
-- Вызови `write_package "DaVinci Resolve Studio" "davinci" "$DAVINCI_VERSION" "" ""`.
-- (Или используй `get_version_package`, если хочешь точную версию из системы — но у DaVinci установщик не пишется в pacman, так что проще брать `DAVINCI_VERSION` из переменной.)
 
-**9 Уборка**
 
-- После выхода из подоболочки удали `$temp_dir` (`rm -rf`).
-- `return 0`
 
 
 cd /opt/resolve
