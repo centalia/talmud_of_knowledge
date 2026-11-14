@@ -39,21 +39,17 @@ SIZE=stat -c "%s" "фаил"
 
 - `write_package "DaVinci Resolve Studio" "davinci" "$DAVINCI_VERSION" "" ""`.
 
-**9 Уборка**
-
+**8 Уборка**
 - Удаляем (`rm -rf`) `$temp_dir`  .
 - `return 0`
 
-**8. Фикс библиотек **
+**9. Фикс библиотек **
 
 - Переходим в `/opt/resolve/libs`.
 - Создай папку `disabled_libs` (если её нет).
 - Перемещаем туда конфликтующие библиотеки: `libglib*`, `libgio*`, `libgmodule*`, `libgobject*`.
 
-
-
-
-
+10. Патчинг
 
 cd /opt/resolve
 
